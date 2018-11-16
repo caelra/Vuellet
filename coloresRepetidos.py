@@ -8,22 +8,19 @@ def coloresRepetidos(imagen):
     colores.append(list(img[0][0]))
     for i in range(0, img.shape[0], 40):
         for j in range(0, img.shape[1], 40):
+            todos_los_componentes = True
             for color in colores:
-                red, green, blue = False, False, False
-                for rgb in range(len(img[i][j])):
-                    if img[i][j][rgb] > color[rgb] - 30 and img[i][j][rgb] < color[rgb] + 30:
-                        if rgb == 0:
-                            red = True
-                        elif rgb == 1:
-                            green = True
-                        elif rgb == 2:
-                            blue = True
-            if red == False and green == False and blue == False:
+                if todos_los_componentes:
+                    todos = 0
+                    for rgb in range(len(img[i][j])):
+                        if img[i][j][rgb] > color[rgb] - 30 and img[i][j][rgb] < color[rgb] + 30:
+                            todos += 1
+                    if todos > 2:
+                        todos_los_componentes = False
+            if todos_los_componentes:
                 colores.append(list(img[i][j]))
+
     return colores
 
 
-img = cv.imread('prueba.jpg', 1)
-colores_repetidos = coloresRepetidos('prueba.jpg')
-print(img.size)
 print(colores_repetidos, len(colores_repetidos))
