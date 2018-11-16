@@ -1,13 +1,11 @@
-import cv2 as cv
-
-
-def coloresRepetidos(imagen):
+def colores(imagen):
     """Devuelve cuales son los colores mas repetidos en una imagen, con un humbral de repeticion"""
+    import cv2 as cv
     img = cv.imread(imagen, 1)
     colores = []
     colores.append(list(img[0][0]))
-    for i in range(0, img.shape[0], 40):
-        for j in range(0, img.shape[1], 40):
+    for i in range(0, img.shape[0], 20):
+        for j in range(0, img.shape[1], 20):
             todos_los_componentes = True
             for color in colores:
                 if todos_los_componentes:
@@ -19,8 +17,8 @@ def coloresRepetidos(imagen):
                         todos_los_componentes = False
             if todos_los_componentes:
                 colores.append(list(img[i][j]))
-
     return colores
 
 
-print(colores_repetidos, len(colores_repetidos))
+# colores_repetidos = coloresRepetidos('prueba.jpg')
+# print(colores_repetidos, len(colores_repetidos))
