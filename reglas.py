@@ -37,7 +37,7 @@ RULE15 = ctrl.Rule(
 RULE16 = ctrl.Rule(
     repeticion['poco'] & brillo['Brillante'] & saturacion['debil'], paleta['no'])
 RULE17 = ctrl.Rule(
-    repeticion['medio'] & brillo['Brillante'] & saturacion['moderado'], paleta['no'])
+    repeticion['medio'] & brillo['Brillante'] & saturacion['moderado'], paleta['si'])
 RULE18 = ctrl.Rule(
     repeticion['mucho'] & brillo['Brillante'] & saturacion['intenso'], paleta['si'])
 RULE19 = ctrl.Rule(
@@ -49,7 +49,7 @@ RULE21 = ctrl.Rule(
 RULE22 = ctrl.Rule(
     repeticion['medio'] & brillo['oscuro'] & saturacion['debil'], paleta['no'])
 RULE23 = ctrl.Rule(
-    repeticion['medio'] & brillo['medio'] & saturacion['moderado'], paleta['no'])
+    repeticion['medio'] & brillo['medio'] & saturacion['moderado'], paleta['si'])
 RULE24 = ctrl.Rule(
     repeticion['medio'] & brillo['Brillante'] & saturacion['intenso'], paleta['si'])
 RULE25 = ctrl.Rule(
@@ -66,7 +66,15 @@ RULE30 = ctrl.Rule(
     repeticion['poco'] & brillo['Brillante'] & saturacion['intenso'], paleta['no'])
 RULE31 = ctrl.Rule(
     repeticion['medio'] & brillo['Brillante'] & saturacion['debil'], paleta['no'])
+RULE32 = ctrl.Rule(
+    repeticion['mucho'] & brillo['oscuro'] & saturacion['moderado'], paleta['si'])
+RULE33 = ctrl.Rule(
+    repeticion['mucho'] & brillo['medio'] & saturacion['debil'], paleta['si'])
+RULE34 = ctrl.Rule(
+    repeticion['medio'] & brillo['oscuro'] & saturacion['intenso'], paleta['si'])
 
 reglas = [RULE1, RULE2, RULE3, RULE4, RULE5, RULE6, RULE7, RULE8, RULE9, RULE10,
           RULE11, RULE12, RULE13, RULE14, RULE15, RULE16, RULE17, RULE18, RULE19,
-          RULE20, RULE21, RULE22, RULE23, RULE24, RULE25, RULE26, RULE27, RULE28, RULE29, RULE30, RULE31]
+          RULE20, RULE21, RULE22, RULE23, RULE24, RULE25, RULE26, RULE27, RULE28,
+          RULE29, RULE30, RULE31, RULE32, RULE33, RULE34
+          ]

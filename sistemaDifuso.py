@@ -14,6 +14,8 @@ def sistemaDifuso(imagen):
     paleta_de_colores = []
 
     for i in range(0, len(hsv)):
+        print("saturacion", (hsv[i][0][0][1] * 100) / 255, "brillo", (hsv[i][0][0]
+                                                                      [2] * 100) / 255, "repeticion", float("{0:.1f}". format(porcentage[i])))
         # se transforman los colores a valor de 100
         paletaa.input['saturacion'] = (hsv[i][0][0][1] * 100) / 255
         paletaa.input['brillo'] = (hsv[i][0][0][2] * 100) / 255

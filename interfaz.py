@@ -44,7 +44,7 @@ class application:
             colorrgb = color[::-1]
             mycolor = "#%02x%02x%02x" % (tuple(colorrgb))
             print(mycolor)
-            Button(self.master, command=self.copyColor(mycolor), text=mycolor, fg='white', pady=10, bg=mycolor, font=(
+            Label(self.master, text=mycolor, fg='white', pady=50, bg=mycolor, font=(
                 'Ubuntu', 12)).pack(side=RIGHT, padx=0, pady=30)
 
     def make_image(self):
