@@ -7,6 +7,7 @@ from PIL import ImageTk, Image
 from sistemaDifuso import sistemaDifuso
 import pyperclip as cp
 from threading import Thread
+import db
 
 
 class application:
@@ -40,12 +41,19 @@ class application:
     def proseso(self, File):
         paleta_de_colores = sistemaDifuso(File)
         print(paleta_de_colores)
+        hex_colors = []
         for color in paleta_de_colores:
             colorrgb = color[::-1]
             mycolor = "#%02x%02x%02x" % (tuple(colorrgb))
             print(mycolor)
+            hex_colors.append(mycolor)
             Label(self.master, text=mycolor, fg='white', pady=50, bg=mycolor, font=(
                 'Ubuntu', 12)).pack(side=RIGHT, padx=0, pady=30)
+
+        db_con = db.DataBase()
+        print(hex_colors)
+        db_con.create_color(str(hex_colors))
+        db_con.select_all_colors()
 
     def make_image(self):
         try:
